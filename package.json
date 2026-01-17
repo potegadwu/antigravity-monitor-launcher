@@ -1,0 +1,11 @@
+{
+  "name": "antigravity-monitor-launcher",
+  "version": "1.0.0",
+  "description": "Launcher for Antigravity mobile chat monitor",
+  "scripts": {
+    "start": "node node_modules/ag-mobile-monitor/server.js"
+  },
+  "dependencies": {
+    "ag-mobile-monitor": "github:gherghett/Antigravity-Shit-Chat"
+  }
+}
