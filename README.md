@@ -4,13 +4,19 @@ Mobile web interface for monitoring Antigravity chat via CDP (Chrome DevTools Pr
 
 ## Prerequisites
 
-1. Start Antigravity with remote debugging enabled:
+1. Start Antigravity with remote debugging enabled (in background):
 
 ```bash
-antigravity . --remote-debugging-port=9000
+antigravity . --remote-debugging-port=9000 &
 ```
 
-2. **Important**: Open the Cascade chat panel in Antigravity before starting the monitor. The server needs to find 3+ execution contexts to capture the chat correctly.
+2. Start the Antigravity Claude proxy:
+
+```bash
+PORT=3000 antigravity-claude-proxy start
+```
+
+3. **Important**: Open the Cascade chat panel in Antigravity before starting the monitor. The server needs to find 3+ execution contexts to capture the chat correctly.
 
 ## Installation
 
@@ -20,11 +26,13 @@ npm install
 
 ## Usage
 
+Since port 3000 is used by the Claude proxy, run the monitor on port 3001:
+
 ```bash
 npm start
 ```
 
-Then access the monitor at `http://localhost:3000` or from mobile at `http://<your-ip>:3000`.
+Then access the monitor at `http://localhost:3001` or from mobile at `http://<your-ip>:3001`.
 
 ## Troubleshooting
 
